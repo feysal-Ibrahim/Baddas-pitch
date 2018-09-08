@@ -58,8 +58,8 @@ class Pitch(db.Model):
 
     @classmethod
     def get_categories(cls, category):
-        pitch_cat = Pitch.query.filter_by(category=category)
-        return pitch_cat
+        pitch_me = Pitch.query.filter_by(category=category)
+        return pitch_me
 
     def __init__(self,title, body, category):
         self.title= title

@@ -32,20 +32,20 @@ class User(UserMixin,db.Model):
         return f'User {self.username}'
 
 
-# class Pitch(db.Model):
-#     __tablename__ = 'pitches'
-#
-#     id = db.Column(db.Integer,primary_key = True)
-#     title = db.Column(db.String(255))
-#     body = db.Column ( db.String )
-#     # Defining the foreign key from the relationship between a user and a pitch
-#     user_id = db.Column ( db.Integer , db.ForeignKey ( "users.id" ) )
-#     # Defining the foreign key from the relationship between a pitch and a category
-#     category_id = db.Column ( db.Integer , db.ForeignKey ( "categories.id" ) )
-#     # Defining a one to many relationship between a pitch and a comment
-#     comments = db.relationship ( 'Comment' , backref="main_pitch" , cascade="all, delete-orphan" , lazy="dynamic" )
-#     def __repr__(self):
-#         return f'User {self.title}'
+class Pitch(db.Model):
+    __tablename__ = 'pitches'
+
+    id = db.Column(db.Integer,primary_key = True)
+    title = db.Column(db.String(255))
+    body = db.Column ( db.String )
+    # Defining the foreign key from the relationship between a user and a pitch
+    user_id = db.Column ( db.Integer , db.ForeignKey ( "users.id" ) )
+    # Defining the foreign key from the relationship between a pitch and a category
+    category_id = db.Column ( db.Integer , db.ForeignKey ( "categories.id" ) )
+    # Defining a one to many relationship between a pitch and a comment
+    comments = db.relationship ( 'Comment' , backref="main_pitch" , cascade="all, delete-orphan" , lazy="dynamic" )
+    def __repr__(self):
+        return f'User {self.title}'
 
 class Category(db.Model):
     __tablename__ = 'categories'

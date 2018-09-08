@@ -13,7 +13,7 @@ def index():
 
     return render_template ( 'index.html' , title=title)
 
-@main.route('/pitch//new', methods = ['GET','POST'])
+@main.route('/pitch/new', methods = ['GET','POST'])
 @login_required
 def new_pitch():
     form = PitchForm ()

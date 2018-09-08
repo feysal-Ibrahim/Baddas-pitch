@@ -47,11 +47,33 @@ class Pitch(db.Model):
     def __repr__(self):
         return f'User {self.title}'
 
+    def save_pitches(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_pitches(cls):
+        pitches = Pitch.query.all()
+        return pitches
+
+    @classmethod
+    def get_categories(cls, category):
+        pitch_cat = Pitch.query.filter_by(category=category)
+        return pitch_cat
+
+    def __init__(self,title, body, category):
+        self.title= title
+        self.body= body
+        self.category= category
+
+
 class Category(db.Model):
     __tablename__ = 'categories'
 
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(255))
+    username = db.Column ( db.String )
+    votes = db.Column ( db.Integer )
+
     # Defining a one to many relationship between a category and a pitch
     pitch = db.relationship('Pitch', backref='parent_category', lazy='dynamic')
 
@@ -73,3 +95,14 @@ class Comment(db.Model):
 
     def __repr__(self):
         return f'Comment {self.comment}'
+
+    def save_comment(self):
+        '''
+        Function that saves comments
+        '''
+        db.session.add ( self )
+        db.session.commit ( )
+
+    @classmethod
+    def clear_comments(cls):
+        Comment.all_comments.clear ( )

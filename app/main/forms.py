@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField
+from wtforms import StringField, TextAreaField,SubmitField,BooleanField,RadioField,SelectField,FileField,PasswordField,SelectField
 from ..models import Pitch, Comment
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired,Required
 
 
 class PitchForm(FlaskForm):
@@ -11,4 +11,6 @@ class PitchForm(FlaskForm):
 
 class CommentForm(FlaskForm):
     comment = TextAreaField('Write a comment here', validators=[DataRequired()])
+    vote = RadioField ( 'Vote ' , choices=[('upvote' , 'upvote') , ('downvote' , 'downvote')] ,
+                        validators=[Required ( )] )
     submit = SubmitField('Submit')

@@ -1,6 +1,6 @@
 # BAADEST PITCH
 # AUTHOR
-**`FEYSAL IBRRAHIM`**
+**`FEYSAL IBRAHIM`**
 
 ##  Link To The Deployed Site
 
@@ -29,7 +29,7 @@ This is a web application that allows various users to submit a short pitch. Use
 
 
 
-###  Bugs Updates
+### Updates on Bugs
 the application currently has no bugs
 
 ### CREDITS
@@ -42,7 +42,7 @@ _`SAM NGINGI`_,_`CYNTHIA KASAMBULI`_ and _`BOYD NDONGA`_
 1. Python3.6
 2. Flask framework
 3. PostgreSQL
-4. PostgreSQL
+4. Bootstrap
 
 
 

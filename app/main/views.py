@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect, request, abort
 from . import main
 from flask_login import login_required, current_user
 from app.models import User, Category, Pitch, Comment
-from .forms import PitchForm,CommentForm
+from .forms import PitchForm,CommentForm, ReviewForm,UpdateProfile
 from ..import db
 
 
@@ -10,7 +10,7 @@ from ..import db
 @main.route('/')
 def index():
     '''
-    function that defines the routes decorater for the index
+    view function that defines the routes decorater for the index
     '''
 
 
@@ -22,7 +22,7 @@ def index():
 @login_required
 def new_pitch():
     '''
-        function that defines the routes decorater for the pitch
+       view function that defines the routes decorater for the pitch
         '''
 
     form = PitchForm ()
@@ -41,7 +41,7 @@ def new_pitch():
 @login_required
 def new_comment():
     '''
-        function that defines the routes decorater for the comments
+       view function that defines the routes decorater for the comments
         '''
 
     comment_form = CommentForm()
@@ -57,11 +57,43 @@ def new_comment():
 
 @main.route('/user/<uname>')
 def profile(uname):
+    '''
+        view function that defines the profile of the user
+        '''
+
     user = User.query.filter_by(username = uname).first()
 
     if user is None:
         abort(404)
 
     return render_template("profile/profile.html", user = user)
+
+@main.route('/user/<uname>/update',methods = ['GET','POST'])
+@login_required
+def update_profile(uname):
+
+    '''
+    view function that will handle an update request
+    '''
+
+    user = User.query.filter_by(username = uname).first()
+    if user is None:
+        abort(404)
+
+    form = UpdateProfile()
+
+    if form.validate_on_submit():
+        user.bio = form.bio.data
+
+        db.session.add(user)
+        db.session.commit()
+
+        return redirect(url_for('.profile',uname=user.username))
+
+    return render_template('profile/update.html',form =form)
+
+'''
+function that will handle an update request
+'''
 
 

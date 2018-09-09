@@ -3,7 +3,7 @@ from . import main
 from flask_login import login_required, current_user
 from app.models import User, Category, Pitch, Comment
 from .forms import PitchForm,CommentForm,UpdateProfile
-from ..import db
+from .. import db
 
 
 
@@ -94,5 +94,8 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
 
     return render_template('profile/update.html',form =form)
+
+
+
 
 

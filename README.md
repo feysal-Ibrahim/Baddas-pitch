@@ -9,6 +9,11 @@
 
 This is a web application that allows various users to submit a short pitch. Users can also be able to view other pitches from different categories (Pick-up Lines, Interview Pitches, Product Pitches, Promotion Pitches), comment and vote. For a user to do any of that, they need to have registered.
 
+## Prerequisites
+- Ubuntu Software
+- Python3.6
+- Postgres
+- python virtualenv
 
 ### Setup/Installation Requirements
 1. `internet access`
@@ -30,7 +35,7 @@ This is a web application that allows various users to submit a short pitch. Use
 
 
 ### Updates on Bugs
-the application currently has no bugs
+The application cannot be run in any version of python lower than 3.6 because you will come across many errors
 
 ### CREDITS
 

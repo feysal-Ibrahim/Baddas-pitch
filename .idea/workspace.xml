@@ -58,7 +58,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="403" />
-          <entry key="md" value="669" />
+          <entry key="md" value="670" />
           <entry key="py" value="1913" />
           <entry key="sh" value="48" />
         </counts>
@@ -67,7 +67,7 @@
         <counts>
           <entry key="Bash" value="48" />
           <entry key="HTML" value="403" />
-          <entry key="Markdown" value="669" />
+          <entry key="Markdown" value="670" />
           <entry key="Python" value="1913" />
         </counts>
       </usages-collector>
@@ -124,8 +124,8 @@
         <entry file="file://$PROJECT_DIR$/../Specs.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="165">
-                <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+              <first_editor relative-caret-position="105">
+                <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               </first_editor>
               <second_editor />
             </state>
@@ -600,8 +600,8 @@
     <entry file="file://$PROJECT_DIR$/../Specs.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="165">
-            <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <first_editor relative-caret-position="105">
+            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           </first_editor>
           <second_editor />
         </state>

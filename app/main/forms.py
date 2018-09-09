@@ -24,5 +24,13 @@ class CommentForm(FlaskForm):
     submit = SubmitField('Submit')
 
     '''
-    crate the inputs for comments form with vite options
+    crate the inputs for comments form with vote option
+    '''
+
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you.',validators = [Required()])
+    submit = SubmitField('Submit')
+
+    '''
+     create a new form class UpdateProfile that has only the bio Textarea form field.
     '''

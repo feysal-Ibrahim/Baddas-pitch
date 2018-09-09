@@ -10,7 +10,7 @@ from ..import db
 @main.route('/')
 def index():
     '''
-    function that defines the routes decorater for the index
+   view function that defines the routes decorater for the index
     '''
 
 
@@ -22,7 +22,7 @@ def index():
 @login_required
 def new_pitch():
     '''
-        function that defines the routes decorater for the pitch
+       view function that defines the routes decorater for the pitch
         '''
 
     form = PitchForm ()
@@ -41,7 +41,7 @@ def new_pitch():
 @login_required
 def new_comment():
     '''
-        function that defines the routes decorater for the comments
+      view  function that defines the routes decorater for the comments
         '''
 
     comment_form = CommentForm()
@@ -53,5 +53,19 @@ def new_comment():
         return redirect(url_for('main.new_comment'))
     comments = Comment.query.all()
     return render_template('comment.html', comment_form=comment_form, comment_list=comments)
+
+
+@main.route('/user/<uname>')
+def profile(uname):
+    '''
+          view  function that defines the routes decorater for the profile
+            '''
+
+    user = User.query.filter_by(username = uname).first()
+
+    if user is None:
+        abort(404)
+
+    return render_template("profile/profile.html", user = user)
 
 

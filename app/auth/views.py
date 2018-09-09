@@ -12,6 +12,10 @@ from flask_login import login_user,logout_user,login_required
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
+    '''
+      function that defines the routes decorater for the regiter form
+      '''
+
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(email = form.email.data, username = form.username.data,password = form.password.data)
@@ -24,6 +28,10 @@ def register():
 
 @auth.route('/login',methods=['GET','POST'])
 def login():
+    '''
+      function that defines the routes decorater for the login form
+      '''
+
     login_form = LoginForm()
     if login_form.validate_on_submit():
         user = User.query.filter_by(email = login_form.email.data).first()
@@ -39,6 +47,10 @@ def login():
 @auth.route('/logout')
 @login_required
 def logout():
+    '''
+      function that defines the routes decorater for the logout function
+      '''
+
     logout_user()
     return redirect(url_for("main.index"))
 

@@ -9,6 +9,11 @@ from ..import db
 
 @main.route('/')
 def index():
+    '''
+    function that defines the routes decorater for the index
+    '''
+
+
     title = 'Home - Welcome to The best Movie Review Website Online'
 
     return render_template ( 'index.html' , title=title)
@@ -16,6 +21,10 @@ def index():
 @main.route('/pitch/new', methods = ['GET','POST'])
 @login_required
 def new_pitch():
+    '''
+        function that defines the routes decorater for the pitch
+        '''
+
     form = PitchForm ()
     if form.validate_on_submit():
         pitches = Pitch ( title=form.title.data , body=form.body.data )
@@ -31,6 +40,10 @@ def new_pitch():
 @main.route('/comment/new', methods = ["GET", "POST"])
 @login_required
 def new_comment():
+    '''
+        function that defines the routes decorater for the comments
+        '''
+
     comment_form = CommentForm()
     if comment_form.validate_on_submit():
         comment = Comment(comment=comment_form.comment.data)

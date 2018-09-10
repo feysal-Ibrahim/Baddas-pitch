@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-SECRET_KEY = os.environ.get
+export SECRET_KEY=os.environ.get
 
-SQLALCHEMY_DATABASE_URI =postgresql+psycopg2://feisal:1234@localhost/pitch
+export SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://feisal:1234@localhost/pitch
 
 
 export MAIL_USERNAME=addictivefazman@gmail.com

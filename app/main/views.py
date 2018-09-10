@@ -12,11 +12,13 @@ def index():
     '''
    view function that defines the routes decorater for the index
     '''
+    pitches=Pitch.query.all()
+
 
 
     title = 'Home - Welcome to The best Movie Review Website Online'
 
-    return render_template ( 'index.html' , title=title)
+    return render_template ( 'index.html' , title=title,pitch_list=pitches)
 
 @main.route('/pitch//new', methods = ['GET','POST'])
 @login_required

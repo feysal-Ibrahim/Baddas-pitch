@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export SECRET_KEY='123456'
+export SECRET_KEY='123'
 
 
 export MAIL_USERNAME='addictivefazman@gmail.com'

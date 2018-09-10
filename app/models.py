@@ -2,6 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+from datetime import datetime
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -40,6 +41,7 @@ class Pitch(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     title = db.Column(db.String(255))
     body = db.Column ( db.String )
+    time_posted = db.Column ( db.DateTime , default=datetime.utcnow )
     # Defining the foreign key from the relationship between a user and a pitch
     user_id = db.Column ( db.Integer , db.ForeignKey ( "users.id" ) )
     # Defining the foreign key from the relationship between a pitch and a category
@@ -72,6 +74,18 @@ class Comment(db.Model):
 
     # Defining the foreign key from the relationship between a user and a comment
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+    def save_comment(self):
+        '''
+        Save the Comments/comments per pitch
+        '''
+        db.session.add ( self )
+        db.session.commit ( )
+
+    @classmethod
+    def get_comments(self , id):
+        comment = Comment.query.order_by ( Comment.time_posted.desc ( ) ).filter_by ( pitches_id=id ).all ( )
+        return comment
 
     def __repr__(self):
         return f'Comment {self.comment}'

@@ -6,7 +6,6 @@ from .forms import PitchForm,CommentForm,UpdateProfile
 from .. import db
 
 
-
 @main.route('/')
 def index():
     '''

@@ -5,8 +5,14 @@ from  flask_migrate import Migrate, MigrateCommand
 
 
 # Creating app instance
-# app = create_app('development')
-app = create_app('production')
+app = create_app('development')
+'''
+development is for launching the app locally..please uncomment it when you want to run the app remotely
+'''
+# app = create_app('production')
+'''
+production is for launching the app remotely..please uncomment it when you want to run the app locally
+'''
 
 manager = Manager(app)
 manager.add_command('server',Server)

@@ -1,0 +1,15 @@
+* {
+    font-family:san-serif;
+    font-size: 20px;
+}
+
+html {
+    font-family: san-serif;
+    font-size: 20px;'
+}
+
+.container-fluid{
+    background-color: black;
+    color: white;
+    opacity: 0.9px;
+}

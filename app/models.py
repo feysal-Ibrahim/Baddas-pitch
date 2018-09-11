@@ -16,7 +16,7 @@ class User(UserMixin,db.Model):
     profile_pic_path = db.Column ( db.String ( ) )
     pass_secure = db.Column ( db.String ( 255 ) )
     # Defining the One to many relationship between a user and a pitch
-    pitch = db.relationship ( 'Pitch' , backref="user" , lazy='dynamic' )
+    pitch = db.relationship ( 'Pitch' , backref="users" , lazy='dynamic' )
 
     @property
     def password(self):

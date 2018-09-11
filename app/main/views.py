@@ -29,12 +29,12 @@ def new_pitch():
 
     form = PitchForm ()
     if form.validate_on_submit():
-        pitches = Pitch ( title=form.title.data , body=form.body.data )
+        pitches = Pitch ( title=form.title.data , body=form.body.data,user_id=current_user.id )
         db.session.add (pitches)
         db.session.commit ()
         flash ( 'Your pitch has been created succesfully' )
         return redirect ( url_for ( 'main.new_pitch' ) )
-    title = "Create a Pitch"
+    # title = "Create a Pitch"
     pitches = Pitch.query.all ()
 
     return render_template ('pitch.html' , title=title , form=form , pitch_list=pitches )

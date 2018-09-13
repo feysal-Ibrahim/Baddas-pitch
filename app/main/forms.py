@@ -19,7 +19,7 @@ class PitchForm(FlaskForm):
 
 class CommentForm(FlaskForm):
     comment = TextAreaField('Write a comment here', validators=[DataRequired()])
-    vote = RadioField ( 'Vote ' , choices=[('upvote' , 'upvote') , ('downvote' , 'downvote')] , validators=[Required ( )] )
+    # vote = RadioField ( 'Vote ' , choices=[('upvote' , 'upvote') , ('downvote' , 'downvote')] , validators=[Required ( )] )
     submit = SubmitField('Submit')
 
     '''

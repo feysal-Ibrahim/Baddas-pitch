@@ -39,7 +39,7 @@ def new_pitch():
 
     return render_template ('pitch.html' , form=form , pitch_list=pitches )
 
-@main.route('/comment/new', methods = ["GET", "POST"])
+@main.route('/comment/new', methods = ['GET', 'POST'])
 @login_required
 def new_comment():
     '''

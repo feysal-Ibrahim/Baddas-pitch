@@ -1,1 +1,6 @@
-./star.sh
+virtual/
+*.pyc
+
+.vscode
+
+start.sh

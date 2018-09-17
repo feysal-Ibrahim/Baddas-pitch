@@ -6,9 +6,16 @@
  Site link:https://pitch-feysal.herokuapp.com/
 
 ## DESCRIPTION
+## Pitch cagetories
+1. KOT
+2. Picup-line
+3. Programing Jokes
+4. Memes
+
 
 This is a web application that allows various users to submit a short pitch. Users can also be able to view other pitches from different categories (Pick-up Lines, Interview Pitches, Product Pitches, Promotion Pitches), comment and vote. For a user to do any of that, they need to have registered.
-
+### Specification
+This is an app that allows users to create,submit,vote post based on categories
 ## Prerequisites
 - Ubuntu Software
 - Python3.6
